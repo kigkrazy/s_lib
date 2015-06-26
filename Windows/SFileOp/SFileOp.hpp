@@ -70,7 +70,7 @@ public:
 
 	/*
 	* 函数名：WriteFileFromString
-	* 参数：	strWrite：写入文件的内容
+	* 参数：	strWrite：写入文件的内容(覆盖)
 	* 功能：	将strWrite的内容写入文件
 	* 返回值：TRUE为成功 FALSE为不成功
 	*/
@@ -84,6 +84,23 @@ public:
 		return TRUE;
 	}
 
+	/*
+	* 函数名：WriteFile2TailFromString
+	* 参数：	strWrite：写入文件的内容（追加到文件末尾）
+	* 功能：	将strWrite的内容写入文件
+	* 返回值：TRUE为成功 FALSE为不成功
+	*/
+	bool WriteFile2TailFromString(const string strWrite)
+	{
+		ofstream oStream(m_strFilePath.c_str(), ios::app);
+		if (!oStream.is_open())
+			return false;
+		oStream.seekp(ios::end);
+		oStream << strWrite.c_str();
+		oStream.close();
+		return true;
+	}
+	
 	/*
 	* 函数名：IsFileExist
 	* 参数：
