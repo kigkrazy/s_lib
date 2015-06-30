@@ -92,10 +92,10 @@ public:
 	*/
 	bool WriteFile2TailFromString(const string strWrite)
 	{
-		ofstream oStream(m_strFilePath.c_str(), ios::app);
+		ofstream oStream;
+		oStream.open(m_strFilePath.c_str(), ios::app);
 		if (!oStream.is_open())
 			return false;
-		oStream.seekp(ios::end);
 		oStream << strWrite.c_str();
 		oStream.close();
 		return true;
