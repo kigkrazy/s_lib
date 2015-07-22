@@ -5,6 +5,8 @@
 * 创建日期：2015年6月17日23:49:05
 * 修改人：KigKrazy
 * 修改日期：2015年6月17日23:49:49
+* 修改人：KigKrazy
+* 修改日期：2015年7月22日16:53:56
 */
 #pragma once
 #ifndef SFILE_OP_HPP_
@@ -66,6 +68,40 @@ public:
 		iStream.close();
 		strReadBuf = ssAll.str();
 		return strReadBuf;
+	}
+
+	/*
+	* 函数名：WriteFileFromByte
+	* 参数： 
+	*	pWriteBuf 写入数据指针
+	*	iStructSize 写入类型大小
+	*	iNum 写入的数据类型的个数
+	* 功能： 以字节为单位向文件写入数据
+	* 返回值： 1表示成功
+	*/
+	BOOL WriteFileFromByte(const void *pWriteBuf, int iStructSize, int iStructNum)
+	{
+		FILE * pfWrite = fopen(m_strFilePath.c_str(), "wb");
+		fwrite(pWriteBuf, iStructSize, iStructNum, pfWrite);
+		fclose(pfWrite);
+		return true;
+	}
+
+	/*
+	* 函数名：WriteFile2TailFromByte
+	* 参数： 
+	*	pWriteBuf 写入数据指针
+	*	iStructSize 写入类型大小
+	*	iNum 写入的数据类型的个数
+	* 功能： 判断是否是文件夹
+	* 返回值： 1表示是文件夹
+	*/
+	BOOL WriteFile2TailFromByte(const void *pWriteBuf, int iStructSize, int iStructNum)
+	{
+		FILE * pfWrite = fopen(m_strFilePath.c_str(), "at+");
+		fwrite(pWriteBuf, iStructSize, iStructNum, pfWrite);
+		fclose(pfWrite);
+		return true;
 	}
 
 	/*
@@ -138,6 +174,7 @@ public:
 	{
 		m_strFilePath = strPath;
 	}
+
 
 
 	/*
