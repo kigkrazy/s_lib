@@ -1,22 +1,56 @@
-#include <iostream>
+#ifdef WIN32
 #include <Windows.h>
-#include "SFileOp.hpp"
+#endif
+
+#include <iostream>
+#include "../../src/file_operation.hpp"
+using namespace std;
+
 using namespace std;
 
 void main()
 {
-	//CSFileOp CSFileOp
-	CSFileOp sfTest("sstest");
-	sfTest.WriteFile2String("test\ntest");
+	CSFileOp sfTestWriteString("ssTestWriteString");
+	sfTestWriteString.WriteFileFromString("test\ntest");
 	string strTest;
-	strTest = sfTest.ReadFile2String();
-	
-	CSFileOp sfTest("wrBuftest");
-	sfTest.WriteFileFromByte("test===================\n", 1, sizeof("test===================\n") - 1);
-	sfTest.WriteFile2TailFromByte("test===================\n", 1, sizeof("test===================\n") - 1);
+	strTest = sfTestWriteString.ReadFile2String();
+	cout << strTest << endl;
+
+	CSFileOp sfTestWriteByte("ssTestWriteByte");
+	sfTestWriteByte.WriteFileFromByte("test===================\n", 1, sizeof("test===================\n") - 1);
+	sfTestWriteByte.WriteFile2TailFromByte("test===================\n", 1, sizeof("test===================\n") - 1);
 
 	//cout << "test" << endl;
-	
+	CSFileOp sfIsDirTest("11");
+	if (sfIsDirTest.IsFileExists())
+	{
+		cout << "File Exists!!" << endl;
+	}
+	else
+	{
+		cout << "File1 not Exists!!" << endl;
+	}
+
+
+
+	if (sfIsDirTest.IsDir())
+	{
+		cout << "File is Dir!!" << endl;
+	}
+	else
+	{
+		cout << "File1 not dir!!" << endl;
+	}
+
+
+	if (sfTestWriteByte.IsDir())
+	{
+		cout << "File is Dir!!" << endl;
+	}
+	else
+	{
+		cout << "File1 not dir!!" << endl;
+	}
 	system("PAUSE");
 }
 
