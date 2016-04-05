@@ -92,9 +92,9 @@ public:
 		if (!IsExist())
 			return 0;
 		ifstream in(m_strFilePath.c_str());
-    		in.seekg(0, ios::end);      //设置文件指针到文件流的尾部
-    		streampos ps = in.tellg();  //读取文件指针的位置
-    		in.close();                 //关闭文件流
+    		in.seekg(0, ios::end);      	//设置文件指针到文件流的尾部
+    		streampos ps = in.tellg();  	//读取文件指针的位置
+    		in.close();                 	//关闭文件流
     		return ps;
 	}
 
