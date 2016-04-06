@@ -13,7 +13,7 @@
 #ifndef SFILE_OP_HPP_
 #define SFILE_OP_HPP_
 #define  _CRT_SECURE_NO_WARNINGS
-#include <Windows.h>
+
 #include <sstream>
 #include <fstream>
 #include <string>
@@ -71,7 +71,7 @@ public:
 	* 功能： 以字节为单位向文件写入数据
 	* 返回值： 1表示成功
 	*/
-	BOOL WriteFileFromByte(const void *pWriteBuf, int iStructSize, int iStructNum)
+	bool WriteFileFromByte(const void *pWriteBuf, int iStructSize, int iStructNum)
 	{
 #ifdef WIN32
 		FILE *pfWrite = NULL;
@@ -94,7 +94,7 @@ public:
 	* 功能： 判断是否是文件夹
 	* 返回值： 1表示是文件夹
 	*/
-	BOOL WriteFile2TailFromByte(const void *pWriteBuf, int iStructSize, int iStructNum)
+	bool WriteFile2TailFromByte(const void *pWriteBuf, int iStructSize, int iStructNum)
 	{
 #ifdef WIN32
 		FILE * pfWrite = NULL;
@@ -111,23 +111,23 @@ public:
 	* 函数名：WriteFileFromString
 	* 参数：	strWrite：写入文件的内容(覆盖)
 	* 功能：	将strWrite的内容写入文件
-	* 返回值：TRUE为成功 FALSE为不成功
+	* 返回值：true为成功 false为不成功
 	*/
-	BOOL WriteFileFromString(const string strWrite)
+	bool WriteFileFromString(const string strWrite)
 	{
 		ofstream oStream(m_strFilePath.c_str());
 		if (!oStream.is_open())
-			return FALSE;
+			return false;
 		oStream << strWrite.c_str();
 		oStream.close();
-		return TRUE;
+		return true;
 	}
 
 	/*
 	* 函数名：WriteFile2TailFromString
 	* 参数：	strWrite：写入文件的内容（追加到文件末尾）
 	* 功能：	将strWrite的内容写入文件
-	* 返回值：TRUE为成功 FALSE为不成功
+	* 返回值：true为成功 false为不成功
 	*/
 	bool WriteFile2TailFromString(const string strWrite)
 	{
@@ -146,9 +146,9 @@ public:
 	* 功能： 判断文件是否存在
 	* 返回值：1为存在 0为不存在
 	*/
-	BOOL IsFileExists()
+	bool IsFileExists()
 	{
-		if (fs::exists(fs::path(m_strFilePath.c_str(), fs::native)))
+		if (fs::exists(fs::path(m_strFilePath.c_str())))
 		{
 			return true;
 		}
