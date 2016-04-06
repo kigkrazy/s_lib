@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros">
+    <SHY_OPENSOURCE>D:\3rdLib</SHY_OPENSOURCE>
+    <BOOST_INC>$(SHY_OPENSOURCE)\boost\include</BOOST_INC>
+    <BOOST_V11_X86_LIB>$(SHY_OPENSOURCE)\boost\vc11\x86\lib</BOOST_V11_X86_LIB>
+    <LIB_NET>D:\3rdLib\libnet-libnet-1.2-rc2</LIB_NET>
+    <LIB_NET_INC>$(LIB_NET)\include</LIB_NET_INC>
+    <GLOBAL_LIB>$(BOOST_V11_X86_LIB);$(LIB_NET_INC)</GLOBAL_LIB>
+    <GLOBAL_INC>$(SHY_OPENSOURCE)\boost\include</GLOBAL_INC>
+  </PropertyGroup>
+  <PropertyGroup>
+    <LibraryPath>$(GLOBAL_LIB_PATH);$(LibraryPath)</LibraryPath>
+    <IncludePath>$(GLOBAL_INC);$(IncludePath)</IncludePath>
+	<ReferencePath>$(ReferencePath)</ReferencePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <Link>
+      <IgnoreSpecificDefaultLibraries>
+      </IgnoreSpecificDefaultLibraries>
+      <AdditionalDependencies>$(GLOBAL_LIB);%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <ClCompile>
+      <PreprocessorDefinitions>_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <CustomBuild>
+      <Command>
+      </Command>
+    </CustomBuild>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <BuildMacro Include="SHY_OPENSOURCE">
+      <Value>$(SHY_OPENSOURCE)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="BOOST_INC">
+      <Value>$(BOOST_INC)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="BOOST_V11_X86_LIB">
+      <Value>$(BOOST_V11_X86_LIB)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="LIB_NET">
+      <Value>$(LIB_NET)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="LIB_NET_INC">
+      <Value>$(LIB_NET_INC)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="GLOBAL_LIB">
+      <Value>$(GLOBAL_LIB)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="GLOBAL_INC">
+      <Value>$(GLOBAL_INC)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+  </ItemGroup>
+</Project>

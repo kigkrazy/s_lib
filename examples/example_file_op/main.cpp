@@ -25,31 +25,45 @@ void main()
 	if (sfIsDirTest.IsFileExists())
 	{
 		cout << "File Exists!!" << endl;
+		if (sfIsDirTest.MkDir())
+		{
+			cout << "Create Dir Success!!" << endl;
+		}
+		else
+		{
+			cout << "Create Dir Failed" << endl;
+		}
 	}
 	else
 	{
 		cout << "File1 not Exists!!" << endl;
-	}
 
+		if (sfIsDirTest.MkDir())
+		{
+			cout << "Create Dir Success!!" << endl;
+		}
+		else
+		{
+			cout << "Create Dir Failed" << endl;
+		}
+	}
 
 
 	if (sfIsDirTest.IsDir())
-	{
 		cout << "File is Dir!!" << endl;
-	}
 	else
-	{
-		cout << "File1 not dir!!" << endl;
-	}
-
+		cout << "File not dir!!" << endl;
 
 	if (sfTestWriteByte.IsDir())
-	{
 		cout << "File is Dir!!" << endl;
-	}
 	else
-	{
 		cout << "File1 not dir!!" << endl;
-	}
+
+
+	if (sfIsDirTest.Delete())
+		cout << "delete success!!!" << endl;
+	else
+		cout << "delete failed!!!" << endl;
+
 }
 

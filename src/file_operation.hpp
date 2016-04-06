@@ -2,12 +2,13 @@
 * 文件名：SFileOp.hpp
 * 功能：封装一些文件读写等相关操作
 * 作者：KigKrazy
-* 创建日期：2015年6月17日23:49:05
+* 创建日期：2016-04-06
 * 修改人：KigKrazy
-* 修改日期：2015年6月17日23:49:49
+* 修改日期：2016-04-06
 * 修改人：KigKrazy
-* 修改日期：2015年7月22日16:53:56
+* 修改日期：2016-04-06
 */
+
 #pragma once
 #ifndef SFILE_OP_HPP_
 #define SFILE_OP_HPP_
@@ -28,7 +29,7 @@ class CSFileOp
 public:
 	//初始化
 	CSFileOp(){}
-	
+
 	CSFileOp(const string strFilePath)
 	{
 		m_strFilePath = strFilePath;
@@ -96,8 +97,8 @@ public:
 	BOOL WriteFile2TailFromByte(const void *pWriteBuf, int iStructSize, int iStructNum)
 	{
 #ifdef WIN32
-	FILE * pfWrite = NULL;
-	fopen_s(&pfWrite, m_strFilePath.c_str(), "at+");
+		FILE * pfWrite = NULL;
+		fopen_s(&pfWrite, m_strFilePath.c_str(), "at+");
 #else
 		FILE * pfWrite = fopen(m_strFilePath.c_str(), "at+");
 #endif // WIN32
@@ -138,7 +139,7 @@ public:
 		oStream.close();
 		return true;
 	}
-	
+
 	/*
 	* 函数名：IsFileExist
 	* 参数：
@@ -180,20 +181,16 @@ public:
 	}
 
 
-
 	/*
 	* 函数名：Delete
 	* 参数： 无
 	* 功能： 删除文件
-	* 返回值： 0表示成功，否则返回错误代码
+	* 返回值： 1表示成功，否则0,文件不存在返回false
 	*/
-	DWORD Delete()
+	bool Delete()
 	{
-		if (DeleteFileA(m_strFilePath.c_str()))
-		{
-			return 0;
-		}
-		return GetLastError();
+		fs::path complete_path = fs::system_complete(fs::path(m_strFilePath.c_str()));
+		return fs::remove(complete_path);
 	}
 
 	/*
@@ -202,7 +199,7 @@ public:
 	* 功能： 判断是否是文件夹
 	* 返回值： 1表示是文件夹
 	*/
-	BOOL IsDir()
+	bool IsDir()
 	{
 		fs::path complete_path = fs::system_complete(fs::path(m_strFilePath.c_str()));
 		if (fs::directory_file == fs::status(complete_path).type())
@@ -215,7 +212,19 @@ public:
 		}
 	}
 
+
+	/*
+	* 函数名：MkDir
+	* 参数： 无
+	* 功能： 判断是否是文件夹
+	* 返回值： 1表示创建成功，否则返回失败，文件已经存在返回失败
+	*/
+	bool MkDir()
+	{
+		fs::path complete_path = fs::system_complete(fs::path(m_strFilePath.c_str()));
+		return fs::create_directory(complete_path);
+	}
 private:
-	string m_strFilePath;	//成员变量，表示文件路径
+	string m_strFilePath;		//成员变量，表示文件路径
 };
 #endif
