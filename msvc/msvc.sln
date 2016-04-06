@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "example_file_op", "..\examples\example_file_op\example_file_op.vcxproj", "{B8F6AA2F-979D-41FD-8B8B-B49B99F23C56}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "simple_ini", "..\examples\simple_ini\simple_ini.vcxproj", "{BE19F4F6-5E1B-4857-B925-DE673F58DEAC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -13,6 +15,10 @@ Global
 		{B8F6AA2F-979D-41FD-8B8B-B49B99F23C56}.Debug|Win32.Build.0 = Debug|Win32
 		{B8F6AA2F-979D-41FD-8B8B-B49B99F23C56}.Release|Win32.ActiveCfg = Release|Win32
 		{B8F6AA2F-979D-41FD-8B8B-B49B99F23C56}.Release|Win32.Build.0 = Release|Win32
+		{BE19F4F6-5E1B-4857-B925-DE673F58DEAC}.Debug|Win32.ActiveCfg = Debug|Win32
+		{BE19F4F6-5E1B-4857-B925-DE673F58DEAC}.Debug|Win32.Build.0 = Debug|Win32
+		{BE19F4F6-5E1B-4857-B925-DE673F58DEAC}.Release|Win32.ActiveCfg = Release|Win32
+		{BE19F4F6-5E1B-4857-B925-DE673F58DEAC}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
