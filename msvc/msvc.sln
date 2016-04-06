@@ -5,6 +5,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "example_file_op", "..\examp
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "simple_ini", "..\examples\simple_ini\simple_ini.vcxproj", "{BE19F4F6-5E1B-4857-B925-DE673F58DEAC}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "example_string_op", "..\examples\example_string_op\example_string_op.vcxproj", "{831FADBA-5048-4ADE-8227-1A6FEE22F29C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -19,6 +21,10 @@ Global
 		{BE19F4F6-5E1B-4857-B925-DE673F58DEAC}.Debug|Win32.Build.0 = Debug|Win32
 		{BE19F4F6-5E1B-4857-B925-DE673F58DEAC}.Release|Win32.ActiveCfg = Release|Win32
 		{BE19F4F6-5E1B-4857-B925-DE673F58DEAC}.Release|Win32.Build.0 = Release|Win32
+		{831FADBA-5048-4ADE-8227-1A6FEE22F29C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{831FADBA-5048-4ADE-8227-1A6FEE22F29C}.Debug|Win32.Build.0 = Debug|Win32
+		{831FADBA-5048-4ADE-8227-1A6FEE22F29C}.Release|Win32.ActiveCfg = Release|Win32
+		{831FADBA-5048-4ADE-8227-1A6FEE22F29C}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

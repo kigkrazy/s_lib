@@ -51,6 +51,5 @@ void main()
 	{
 		cout << "File1 not dir!!" << endl;
 	}
-	system("PAUSE");
 }
 

@@ -1,6 +1,5 @@
 #include <iostream>
 #include <string>
-#include <string>
 #include "../../src/simpleini/SimpleIni.h"
 
 #ifdef __linux__
@@ -43,5 +42,4 @@ void main ()
 	string strGetValue = ini.GetValue("student", "name");
 	cout << "Key Name is: "<<strGetValue.c_str()<<endl;
 
-	//system("pause");
 }
