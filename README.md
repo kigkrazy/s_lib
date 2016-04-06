@@ -19,4 +19,5 @@ s_lib
 第三方相关库说明
 ------
 file_operation.hpp
-simpleini
+simpleini	文件夹
+string_operation.hpp
