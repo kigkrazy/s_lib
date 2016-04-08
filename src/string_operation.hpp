@@ -76,7 +76,7 @@ std::string to_hex_str(const uint8_t* buf,int len,std::string tok = "")
     for (int i = 0; i < len; ++i)  
     {  
         sprintf(temp,"0x%.2x",(uint8_t)buf[i]);  
-        output.append(temp,4);  
+        output.append(temp,2);  
         output.append(tok);  
     }  
   
