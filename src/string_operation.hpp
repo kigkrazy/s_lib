@@ -40,6 +40,49 @@ std::wstring s2ws(const std::string& s)
 
 
 /*
+* 函数名：to_binary_str
+* 参数：
+*	buf 需要输出的地址指针
+*	len 输出的长度
+* 功能：	将内存中的数值转换为二进制字符串
+* 返回值：	转换后的string
+*/
+std::string to_binary_str(const uint8_t* buf,int len)  
+{  
+    int output_len = len*8;  
+    std::string output;  
+    const char* m[] = {"0","1"};  
+  
+    for(int i = output_len - 1,j = 0; i >=0 ; --i,++j)  
+    {  
+        output.append(m[((uint8_t)buf[j/8] >> (i % 8)) & 0x01],1);  
+    }  
+    return output;  
+}  
+ 
+/*
+* 函数名：to_binary_str
+* 参数：
+*	buf 需要输出的地址指针
+*	len 输出的长度
+*   tok 分割符
+* 功能：	将内存中的数值转换为十六进制字符串
+* 返回值：	转换后的string
+*/
+std::string to_hex_str(const uint8_t* buf,int len,std::string tok = "")  
+{  
+    std::string output;  
+    char temp[8];  
+    for (int i = 0; i < len; ++i)  
+    {  
+        sprintf(temp,"0x%.2x",(uint8_t)buf[i]);  
+        output.append(temp,4);  
+        output.append(tok);  
+    }  
+  
+    return output;  
+}  
+/*
 * 函数名：split
 * 参数：
 *	str 需要分割的字符串
