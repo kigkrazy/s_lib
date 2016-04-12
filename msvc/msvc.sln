@@ -9,6 +9,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "example_glog", "..\examples
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "example_simple_ini", "..\examples\example_simple_ini\example_simple_ini.vcxproj", "{62E6F4BC-DB93-48A6-9552-4A564C9DDDD8}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "example_pcap", "..\examples\example_pcap\example_pcap.vcxproj", "{011D7E54-A976-4261-ADBC-709A14374807}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "example_program_op", "..\examples\example_program_op\example_program_op.vcxproj", "{60A1168D-F372-488E-9A9E-32E6F7169A49}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -31,6 +35,14 @@ Global
 		{62E6F4BC-DB93-48A6-9552-4A564C9DDDD8}.Debug|Win32.Build.0 = Debug|Win32
 		{62E6F4BC-DB93-48A6-9552-4A564C9DDDD8}.Release|Win32.ActiveCfg = Release|Win32
 		{62E6F4BC-DB93-48A6-9552-4A564C9DDDD8}.Release|Win32.Build.0 = Release|Win32
+		{011D7E54-A976-4261-ADBC-709A14374807}.Debug|Win32.ActiveCfg = Debug|Win32
+		{011D7E54-A976-4261-ADBC-709A14374807}.Debug|Win32.Build.0 = Debug|Win32
+		{011D7E54-A976-4261-ADBC-709A14374807}.Release|Win32.ActiveCfg = Release|Win32
+		{011D7E54-A976-4261-ADBC-709A14374807}.Release|Win32.Build.0 = Release|Win32
+		{60A1168D-F372-488E-9A9E-32E6F7169A49}.Debug|Win32.ActiveCfg = Debug|Win32
+		{60A1168D-F372-488E-9A9E-32E6F7169A49}.Debug|Win32.Build.0 = Debug|Win32
+		{60A1168D-F372-488E-9A9E-32E6F7169A49}.Release|Win32.ActiveCfg = Release|Win32
+		{60A1168D-F372-488E-9A9E-32E6F7169A49}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

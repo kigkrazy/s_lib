@@ -4,11 +4,12 @@
 * 
 * NOTE:文件为glog的使用DEMO
 * 
-* 项目地址：https://git.oschina.net/KigKrazy/various_demo.git
+* 项目地址：https://git.oschina.net/KigKrazy/s_lib.git
 *
 * 使用注意：
-*	VS下使用请加上以下预处理器定义：
+*	1.VS下使用请加上以下预处理器定义：
 *		GOOGLE_GLOG_DLL_DECL=;GLOG_NO_ABBREVIATED_SEVERITIES;
+*	2.请先在工程中配置好GLOG目录
 ******************************************************************************************/
 #include <iostream>
 #include <iterator>
