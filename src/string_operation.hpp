@@ -120,7 +120,7 @@ static int str_to_hex(char *string, unsigned char *cbuf, int len)
 
 		cbuf[ii++] = high<<4 | low;  
 	}  
-	return 0;  
+	return 1;  
 }
 
 /*
