@@ -38,12 +38,16 @@ int main(int ac, char* av[])
 	FLAGS_stop_logging_if_full_disk = true;									// If disk is full
 	FLAGS_v = 3;															//VLOG中小于等于FLAGS_v则输出
 
-
+	
 	VLOG(1) << "if 1 <3 printf";											//1 < 3会输出log
 	VLOG(1) << "if 4 > 3 printf";											//4 > 3不会输出LOG
 
 	LOG(INFO) << "hello world"; 
 	LOG(WARNING) << "hello world222222"; 
+
+	DLOG_IF(INFO, 1) << "DLOG_IF(INFO, 1) test";
+
+	DLOG(INFO) << "DLOG_IF(INFO, 1) test";
 	system("pause");
 	return 0;
 }

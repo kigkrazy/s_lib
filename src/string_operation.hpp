@@ -63,7 +63,7 @@ std::string to_binary_str(const uint8_t* buf,int len)
 }  
  
 /*
-* 函数名：to_binary_str
+* 函数名：to_hex_str
 * 参数：
 *	buf 需要输出的地址指针
 *	len 输出的长度
@@ -84,6 +84,45 @@ std::string to_hex_str(const uint8_t* buf,int len,std::string tok = "")
   
     return output;  
 }  
+
+/**************************************************************************** 
+函数名称: str_to_hex 
+函数功能: 字符串转换为十六进制 
+输入参数: string 字符串 cbuf 十六进制 len 字符串的长度。 
+输出参数: 无 
+*****************************************************************************/  
+static int str_to_hex(char *string, unsigned char *cbuf, int len)  
+{  
+	unsigned char high, low;  
+	int idx, ii=0;  
+	for (idx=0; idx<len; idx+=2)   
+	{  
+		high = string[idx];  
+		low = string[idx+1];  
+
+		if(high>='0' && high<='9')  
+			high = high-'0';  
+		else if(high>='A' && high<='F')  
+			high = high - 'A' + 10;  
+		else if(high>='a' && high<='f')  
+			high = high - 'a' + 10;  
+		else  
+			return -1;  
+
+		if(low>='0' && low<='9')  
+			low = low-'0';  
+		else if(low>='A' && low<='F')  
+			low = low - 'A' + 10;  
+		else if(low>='a' && low<='f')  
+			low = low - 'a' + 10;  
+		else  
+			return -1;  
+
+		cbuf[ii++] = high<<4 | low;  
+	}  
+	return 0;  
+}
+
 /*
 * 函数名：split
 * 参数：
