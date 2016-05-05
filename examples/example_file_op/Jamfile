@@ -1,0 +1,51 @@
+#文件说明:
+#
+#
+#
+#
+
+#一些库定义
+#library-search-path 已经在Jamroot定义
+#lib curl : : <name>curl $(library-search-path) ;
+
+rule linking ( properties * )
+{
+    local result ;
+
+    return $(result) ;
+}
+
+#参数定义
+local usage-requirements =
+        <variant>release:<define>NDEBUG
+        <conditional>@linking-base
+        <conditional>@linking
+        #<define>TEST_      #预定义宏
+        #<include>src       #头文件目录
+
+
+    #gcc的一些优化选项
+    #<toolset>gcc,<variant>release:<cxxflags>-O3
+    ;
+
+project example_file_op ;
+
+exe example_file_op
+
+    : #源码
+    main.cpp
+    #[ glob src/*.cpp ]     这是另一种形式到文件表示形式
+
+    : #要求
+    $(usage-requirements)
+
+
+    :   #build条件
+    #下面两个选项已经在Jamroot中定义
+    <boost>source
+    <boost-link>static
+
+#    : # usage requirements
+#$(usage-requirements)
+    ;
+
