@@ -1,0 +1,37 @@
+综述：
+
+ON WINDOWS
+---------------------------------
+1.安装好BOOST库，并用VS2012以上版本打开msvc\msvc.sln
+2.进入工程后配置相关BOOST，以及以来库目录
+
+
+ON LINUX
+---------------------------------
+1.配置相关环境
+	1).安装开发环境
+		yum groupinstall "Development Tools"
+	2).将源码复制到：/usr/local/src目录下，解压并进入源码目录。
+
+	3).执行命令
+		sh ./bootstrap.sh; ./b2 --prefix=/usr/local/boost --build-type=minimal link=static runtime-link=static install  
+	4). 在/etc/profile 末尾添加如下内容：
+		BOOST_BUILD_PATH=/usr/local/src/boost_1_58_0  
+		BOOST_ROOT=/usr/local/boost/  
+		BOOST_INC=/usr/local/boost/include/  
+		BOOST_LIB=/usr/local/boost/lib/  
+		export BOOST_BUILD_PATH BOOST_ROOT BOOST_INC BOOST_LIB  
+	5).执行命令
+		source /etc/profile  
+	6).执行命令
+		ln -s /usr/local/src/boost_1_57_0/bjam /usr/bin/bjam  
+		ln -s /usr/local/src/boost_1_57_0/b2 /usr/bin/b2  
+
+2.以上环境配置完毕，即可进入相应工程进行编译
+
+
+3.各个工程编译命令，以及说明如下：
+	1).example_file_op
+		bjam release toolset=gcc
+	2).example_program_op
+		bjam release toolset=gcc
