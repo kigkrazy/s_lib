@@ -42,7 +42,7 @@ std::wstring s2ws(const std::string& s)
 
 
 /*
-* 函数名：to_binary_str
+* 函数名：hexdata_to_binarystr
 * 参数：
 *	buf 需要输出的地址指针
 *	len 输出的长度
